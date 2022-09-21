@@ -61,7 +61,7 @@ const calculateCartPrice = () => {
   });
   const taxPrice = subTotal * localStorage.getItem("taxRate");
   const shippingPrice =
-    subTotal > 0 && subTotal < localStorage.getItem("taxRate")
+    subTotal > 0 && subTotal < localStorage.getItem("shippingFreePrice")
       ? localStorage.getItem("shippingPrice")
       : 0;
 };
