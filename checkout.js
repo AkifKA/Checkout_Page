@@ -47,7 +47,9 @@ const calculateProductPrice = (clickedBtn) => {
   const productInfoDiv = clickedBtn.parentElement.parentElement;
   //console.log(productInfoDiv);
   const price = productInfoDiv.querySelector(".product-price strong").innerText;
-  alert(price);
+  const quantity = productInfoDiv.querySelector(".quantity").innerText;
+  const productTotalDiv = productInfoDiv.querySelector(".product-line-price");
+  productTotalDiv.innerText = (price * quantity).toFixed(2);
 };
 
 const calculateCartPrice = () => {};
