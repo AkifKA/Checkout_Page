@@ -64,4 +64,5 @@ const calculateCartPrice = () => {
     subTotal > 0 && subTotal < localStorage.getItem("shippingFreePrice")
       ? localStorage.getItem("shippingPrice")
       : 0;
+  console.log(shippingPrice);
 };
