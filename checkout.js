@@ -59,4 +59,9 @@ const calculateCartPrice = () => {
   productTotalPricesDivs.forEach((div) => {
     subTotal += parseFloat(div.innerText);
   });
+  const taxPrice = subTotal * localStorage.getItem("taxRate");
+  const shippingPrice =
+    subTotal > 0 && subTotal < localStorage.getItem("taxRate")
+      ? localStorage.getItem("shippingPrice")
+      : 0;
 };
