@@ -43,8 +43,8 @@ productsDiv.addEventListener("click", (event) => {
   }
 });
 
-const calculateProductPrice = (clickedBtn) => {
-  const productInfoDiv = clickedBtn.parentElement.parentElement;
+const calculateProductPrice = (btn) => {
+  const productInfoDiv = btn.parentElement.parentElement;
   //console.log(productInfoDiv);
   const price = productInfoDiv.querySelector(".product-price strong").innerText;
   const quantity = productInfoDiv.querySelector(".quantity").innerText;
@@ -52,4 +52,11 @@ const calculateProductPrice = (clickedBtn) => {
   productTotalDiv.innerText = (price * quantity).toFixed(2);
 };
 
-const calculateCartPrice = () => {};
+const calculateCartPrice = () => {
+  const productTotalPricesDivs =
+    document.querySelectorAll("product-line-price");
+  let subTotal = 0;
+  productTotalPricesDivs.forEach((div) => {
+    subTotal += parseFloat(div.innerText);
+  });
+};
